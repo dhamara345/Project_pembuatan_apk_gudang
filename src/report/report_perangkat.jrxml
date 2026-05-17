@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_perangkat" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString>
+		<![CDATA[SELECT sn_perangkat, nama_perangkat, jenis_perangkat, FROM Perangkat]]>
+	</queryString>
+	<field name="sn_perangkat" class="java.lang.String"/>
+	<field name="nama_perangkat" class="java.lang.String"/>
+	<field name="jenis_perangkat" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="35"/>
+				<textElement textAlignment="Center"><font size="22" isBold="true"/></textElement>
+				<text><![CDATA[LAPORAN MASTER DATA PERANGKAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="555" height="20"/>
+				<textElement textAlignment="Center"><font size="11" isItalic="true"/></textElement>
+				<text><![CDATA[Sistem Informasi Manajemen Stok Kelompok 3]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="120" splitType="Stretch">
+			<staticText><reportElement x="50" y="10" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Serial Number]]></text></staticText>
+			<textField><reportElement x="210" y="10" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{sn_perangkat}]]></textFieldExpression></textField>
+			
+			<staticText><reportElement x="50" y="35" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Nama Perangkat]]></text></staticText>
+			<textField><reportElement x="210" y="35" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{nama_perangkat}]]></textFieldExpression></textField>
+			
+			<staticText><reportElement x="50" y="60" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Jenis Perangkat]]></text></staticText>
+			<textField><reportElement x="210" y="60" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{jenis_perangkat}]]></textFieldExpression></textField>
+			
+			<staticText><reportElement x="50" y="85" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Status Stok]]></text></staticText>
+			<textField><reportElement x="210" y="85" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{status}]]></textFieldExpression></textField>
+			<staticText><reportElement x="50" y="105" width="440" height="15"/><text><![CDATA[-------------------------------------------------------------------------------------------------------------------------]]></text></staticText>
+		</band>
+	</detail>
+</jasperReport>

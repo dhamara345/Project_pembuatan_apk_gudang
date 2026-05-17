@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_kabel" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString>
+		<![CDATA[SELECT id_kabel, panjang_kabel, jenis_kabel, tipe_kabel FROM Kabel]]>
+	</queryString>
+	<field name="id_kabel" class="java.lang.String"/>
+	<field name="panjang_kabel" class="java.lang.String"/>
+	<field name="jenis_kabel" class="java.lang.String"/>
+	<field name="tipe_kabel" class="java.lang.String"/>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="35"/>
+				<textElement textAlignment="Center"><font size="22" isBold="true"/></textElement>
+				<text><![CDATA[LAPORAN MASTER DATA STOK KABEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="555" height="20"/>
+				<textElement textAlignment="Center"><font size="11" isItalic="true"/></textElement>
+				<text><![CDATA[Sistem Informasi Manajemen Stok Kelompok 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="65" width="555" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[================================================================]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="120" splitType="Stretch">
+			<staticText><reportElement x="50" y="10" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[ID Kabel]]></text></staticText>
+			<textField><reportElement x="210" y="10" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{id_kabel}]]></textFieldExpression></textField>
+			
+			<staticText><reportElement x="50" y="35" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Panjang Kabel]]></text></staticText>
+			<textField><reportElement x="210" y="35" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{panjang_kabel}]]></textFieldExpression></textField>
+			
+			<staticText><reportElement x="50" y="60" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Jenis Kabel]]></text></staticText>
+			<textField><reportElement x="210" y="60" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{jenis_kabel}]]></textFieldExpression></textField>
+			
+			<staticText><reportElement x="50" y="85" width="140" height="20"/><textElement><font size="11" isBold="true"/></textElement><text><![CDATA[Tipe Kabel]]></text></staticText>
+			<textField><reportElement x="210" y="85" width="300" height="20"/><textElement><font size="11"/></textElement><textFieldExpression><![CDATA[": " + $F{tipe_kabel}]]></textFieldExpression></textField>
+			<staticText><reportElement x="50" y="105" width="440" height="15"/><text><![CDATA[-------------------------------------------------------------------------------------------------------------------------]]></text></staticText>
+		</band>
+	</detail>
+</jasperReport>
